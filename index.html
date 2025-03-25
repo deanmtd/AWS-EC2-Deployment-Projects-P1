@@ -5,87 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AWS EC2 Deployment Project</title>
     <style>
+        :root {
+            --aws-orange: #FF9900;
+            --aws-dark: #232F3E;
+            --aws-light: #FAFAFA;
+            --aws-border: #E6E6E6;
+            --aws-text: #16191F;
+            --aws-link: #0073BB;
+            --aws-link-hover: #FF9900;
+        }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Amazon Ember', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: var(--aws-text);
             line-height: 1.6;
-            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: var(--aws-light);
+        }
+        
+        header {
+            background-color: var(--aws-dark);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
+            padding: 1rem;
         }
-        header {
-            background-color: #232f3e;
-            color: white;
-            padding: 30px 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+        
         h1 {
-            color: #0073bb;
-            border-bottom: 3px solid #ff9900;
+            color: var(--aws-orange);
+            border-bottom: 3px solid var(--aws-orange);
             padding-bottom: 15px;
             margin-top: 0;
         }
+        
         h2 {
-            color: #232f3e;
-            border-bottom: 2px solid #ff9900;
+            color: var(--aws-dark);
+            border-bottom: 2px solid var(--aws-orange);
             padding-bottom: 10px;
             margin-top: 40px;
         }
+        
         h3 {
-            color: #0073bb;
+            color: var(--aws-link);
             margin-top: 25px;
         }
+        
         .contents {
-            background-color: #f1f8ff;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
         }
+        
         .contents a {
-            color: #0073bb;
+            color: var(--aws-link);
             text-decoration: none;
         }
+        
         .contents a:hover {
+            color: var(--aws-link-hover);
             text-decoration: underline;
         }
+        
         .container {
             background-color: white;
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+        
         code {
-            background-color: #f1f8ff;
-            padding: 2px 5px;
+            font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+            background-color: #F5F5F5;
+            padding: 2px 4px;
             border-radius: 3px;
-            font-family: 'Courier New', monospace;
-            color: #0073bb;
+            border: 1px solid var(--aws-border);
+            color: var(--aws-dark);
         }
+        
         pre {
-            background-color: #f1f8ff;
-            padding: 15px;
+            background-color: #F5F5F5;
+            padding: 1rem;
             border-radius: 5px;
             overflow-x: auto;
-            border-left: 4px solid #ff9900;
+            border: 1px solid var(--aws-border);
+            border-left: 4px solid var(--aws-orange);
         }
+        
         ul, ol {
             padding-left: 25px;
         }
+        
         img {
             max-width: 100%;
             height: auto;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            border: 1px solid var(--aws-border);
+            border-radius: 5px;
             padding: 5px;
             margin: 15px 0;
             display: block;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
+        
         strong {
-            color: #0073bb;
+            color: var(--aws-link);
+        }
+        
+        a {
+            color: var(--aws-link);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: var(--aws-link-hover);
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -112,38 +152,39 @@
         </ul>
     </div>
 
-    <h1>AWS EC2 Deployment Project</h1>
+    <div class="container">
+        <h1>AWS EC2 Deployment Project</h1>
 
-    <h2 id="project-overview">Project Overview</h2>
-    <p>This portfolio project demonstrates my ability to deploy and manage EC2 instances on AWS, covering essential cloud computing concepts and best practices. The project focuses on successfully launching, configuring, and securing a web server using Amazon EC2.</p>
+        <h2 id="project-overview">Project Overview</h2>
+        <p>This portfolio project demonstrates my ability to deploy and manage EC2 instances on AWS, covering essential cloud computing concepts and best practices. The project focuses on successfully launching, configuring, and securing a web server using Amazon EC2.</p>
 
-    <h2 id="technical-skills-demonstrated">Technical Skills Demonstrated</h2>
-    <ul>
-        <li>EC2 instance creation and management</li>
-        <li>Security Group configuration</li>
-        <li>SSH access setup and management</li>
-        <li>IAM role implementation</li>
-        <li>EC2 User Data scripts</li>
-        <li>Web server deployment</li>
-        <li>Linux command line operations</li>
-        <li>AWS cost management practices</li>
-    </ul>
+        <h2 id="technical-skills-demonstrated">Technical Skills Demonstrated</h2>
+        <ul>
+            <li>EC2 instance creation and management</li>
+            <li>Security Group configuration</li>
+            <li>SSH access setup and management</li>
+            <li>IAM role implementation</li>
+            <li>EC2 User Data scripts</li>
+            <li>Web server deployment</li>
+            <li>Linux command line operations</li>
+            <li>AWS cost management practices</li>
+        </ul>
 
-    <h2 id="project-implementation">Project Implementation</h2>
+        <h2 id="project-implementation">Project Implementation</h2>
 
-    <h3 id="instance-creation">1. Instance Creation and Configuration</h3>
-    <p>I successfully launched an EC2 instance with the following specifications:</p>
-    <ul>
-        <li><strong>Instance Name</strong>: My First Instance</li>
-        <li><strong>AMI</strong>: Amazon Linux 2</li>
-        <li><strong>Instance Type</strong>: t2.micro (free tier eligible)</li>
-        <li><strong>Key Pair</strong>: Created a new key pair for secure SSH access</li>
-        <li><strong>Network Settings</strong>: Default VPC with auto-assigned public IP</li>
-        <li><strong>User Data</strong>: Implemented a bootstrap script to set up a web server</li>
-    </ul>
+        <h3 id="instance-creation">1. Instance Creation and Configuration</h3>
+        <p>I successfully launched an EC2 instance with the following specifications:</p>
+        <ul>
+            <li><strong>Instance Name</strong>: My First Instance</li>
+            <li><strong>AMI</strong>: Amazon Linux 2</li>
+            <li><strong>Instance Type</strong>: t2.micro (free tier eligible)</li>
+            <li><strong>Key Pair</strong>: Created a new key pair for secure SSH access</li>
+            <li><strong>Network Settings</strong>: Default VPC with auto-assigned public IP</li>
+            <li><strong>User Data</strong>: Implemented a bootstrap script to set up a web server</li>
+        </ul>
 
-    <h4>User Data Script</h4>
-    <pre><code>#!/bin/bash
+        <h4>User Data Script</h4>
+        <pre><code>#!/bin/bash
 # install httpd (Linux 2 version)
 yum update -y
 yum install -y httpd
@@ -151,40 +192,40 @@ systemctl start httpd
 systemctl enable httpd
 echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html</code></pre>
 
-    <img src="images/instance-creation.png" alt="EC2 Instance Creation" width="400">
+        <img src="images/instance-creation.png" alt="EC2 Instance Creation" width="400">
 
-    <h3 id="security-implementation">2. Security Implementation</h3>
-    <p>I configured a comprehensive security strategy for the EC2 instance:</p>
+        <h3 id="security-implementation">2. Security Implementation</h3>
+        <p>I configured a comprehensive security strategy for the EC2 instance:</p>
 
-    <h4>Security Groups</h4>
-    <ul>
-        <li>Created a security group with precise inbound rules:</li>
+        <h4>Security Groups</h4>
         <ul>
-            <li>SSH (Port 22) - For secure administrative access</li>
-            <li>HTTP (Port 80) - For web server access</li>
+            <li>Created a security group with precise inbound rules:</li>
+            <ul>
+                <li>SSH (Port 22) - For secure administrative access</li>
+                <li>HTTP (Port 80) - For web server access</li>
+            </ul>
+            <li>Implemented best practices by understanding security group configurations</li>
         </ul>
-        <li>Implemented best practices by understanding security group configurations</li>
-    </ul>
 
-    <h4>SSH Access Methods</h4>
-    <ul>
-        <li>Traditional SSH using key pairs</li>
-        <li>PuTTY for Windows-based access</li>
-        <li>EC2 Instance Connect for browser-based management</li>
-    </ul>
+        <h4>SSH Access Methods</h4>
+        <ul>
+            <li>Traditional SSH using key pairs</li>
+            <li>PuTTY for Windows-based access</li>
+            <li>EC2 Instance Connect for browser-based management</li>
+        </ul>
 
-    <img src="images/security-group.png" alt="Security Group Configuration" width="400">
+        <img src="images/security-group.png" alt="Security Group Configuration" width="400">
 
-    <h3 id="iam-role-implementation">3. IAM Role Implementation</h3>
-    <p>Applied least-privilege security principles by:</p>
-    <ul>
-        <li>Creating a dedicated IAM role for the EC2 instance</li>
-        <li>Attaching the IAMReadOnlyAccess policy to the role</li>
-        <li>Demonstrating the secure use of temporary credentials</li>
-    </ul>
+        <h3 id="iam-role-implementation">3. IAM Role Implementation</h3>
+        <p>Applied least-privilege security principles by:</p>
+        <ul>
+            <li>Creating a dedicated IAM role for the EC2 instance</li>
+            <li>Attaching the IAMReadOnlyAccess policy to the role</li>
+            <li>Demonstrating the secure use of temporary credentials</li>
+        </ul>
 
-    <h4>IAM Role Policy</h4>
-    <pre><code>{
+        <h4>IAM Role Policy</h4>
+        <pre><code>{
     "Version": "2012-10-17",
     "Statement": [{
         "Effect": "Allow",
@@ -196,37 +237,38 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html</code
     }]
 }</code></pre>
 
-    <img src="images/iam-role.png" alt="IAM Role Configuration" width="400">
+        <img src="images/iam-role.png" alt="IAM Role Configuration" width="400">
 
-    <h3 id="cost-optimization">4. Cost Optimization Strategies</h3>
-    <p>I researched and documented multiple AWS cost management strategies:</p>
-    <ul>
-        <li><strong>On-Demand Instances</strong>: Used for variable workloads with no upfront payment</li>
-        <li><strong>Reserved Instances</strong>: Analyzed for predictable workloads to achieve up to 72% savings</li>
-        <li><strong>Spot Instances</strong>: Explored for non-critical, flexible applications with potential savings of up to 90%</li>
-        <li><strong>Savings Plans</strong>: Evaluated as a flexible commitment-based discount model</li>
-        <li><strong>Instance Lifecycle Management</strong>: Demonstrated starting/stopping instances to control costs</li>
-    </ul>
+        <h3 id="cost-optimization">4. Cost Optimization Strategies</h3>
+        <p>I researched and documented multiple AWS cost management strategies:</p>
+        <ul>
+            <li><strong>On-Demand Instances</strong>: Used for variable workloads with no upfront payment</li>
+            <li><strong>Reserved Instances</strong>: Analyzed for predictable workloads to achieve up to 72% savings</li>
+            <li><strong>Spot Instances</strong>: Explored for non-critical, flexible applications with potential savings of up to 90%</li>
+            <li><strong>Savings Plans</strong>: Evaluated as a flexible commitment-based discount model</li>
+            <li><strong>Instance Lifecycle Management</strong>: Demonstrated starting/stopping instances to control costs</li>
+        </ul>
 
-    <h3 id="system-monitoring">5. System Monitoring and Management</h3>
-    <p>I successfully implemented instance management practices:</p>
-    <ul>
-        <li>Monitored instance state and health</li>
-        <li>Demonstrated the proper starting, stopping, and terminating of instances</li>
-        <li>Observed and documented the behavior of public IP addresses when instances are stopped and restarted</li>
-        <li>Verified that private IP addresses remain consistent through stop/start cycles</li>
-    </ul>
+        <h3 id="system-monitoring">5. System Monitoring and Management</h3>
+        <p>I successfully implemented instance management practices:</p>
+        <ul>
+            <li>Monitored instance state and health</li>
+            <li>Demonstrated the proper starting, stopping, and terminating of instances</li>
+            <li>Observed and documented the behavior of public IP addresses when instances are stopped and restarted</li>
+            <li>Verified that private IP addresses remain consistent through stop/start cycles</li>
+        </ul>
 
-    <h2 id="future-enhancements">Future Enhancements</h2>
-    <ul>
-        <li>Implement EC2 Auto Scaling</li>
-        <li>Add Elastic Load Balancing</li>
-        <li>Configure Route 53 for DNS management</li>
-        <li>Implement SSL/TLS using AWS Certificate Manager</li>
-        <li>Set up CloudWatch for performance monitoring and alerting</li>
-        <li>Convert manual setup to AWS CloudFormation templates</li>
-    </ul>
+        <h2 id="future-enhancements">Future Enhancements</h2>
+        <ul>
+            <li>Implement EC2 Auto Scaling</li>
+            <li>Add Elastic Load Balancing</li>
+            <li>Configure Route 53 for DNS management</li>
+            <li>Implement SSL/TLS using AWS Certificate Manager</li>
+            <li>Set up CloudWatch for performance monitoring and alerting</li>
+            <li>Convert manual setup to AWS CloudFormation templates</li>
+        </ul>
 
-    <p>This project demonstrates fundamental AWS cloud computing skills including EC2 instance deployment, security configuration, and best practices for web application hosting.</p>
+        <p>This project demonstrates fundamental AWS cloud computing skills including EC2 instance deployment, security configuration, and best practices for web application hosting.</p>
+    </div>
 </body>
 </html>
