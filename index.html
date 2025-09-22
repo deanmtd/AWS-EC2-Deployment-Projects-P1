@@ -200,11 +200,7 @@ systemctl start httpd
 systemctl enable httpd
 echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html</code></pre>
             
-            <div class="image-placeholder">
-                <p>User Data Script Output Screenshot</p>
-            </div>
-        </div>
-        
+
         <div class="section">
             <h2>2. Security Implementation</h2>
             <p>I configured a comprehensive security strategy for the EC2 instance:</p>
@@ -218,38 +214,38 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html</code
                     </ul>
                 </li>
                 <li>Implemented best practices by understanding security groups act as a stateful firewall</li>
-                <li>Demonstrated troubleshooting skills by identifying security group configuration issues</li>
+                <li>Demonstrated troubleshooting skills by identifying security group configuration issues: Removed IPV4 Inbound rule (no more access via port 22)</li>
+				<li>I was no longer able to access the URL; It gave me a timeout related error. I was able to successfully access the URL after restoring the rule</li>
             </ul>
             
-            <div class="image-placeholder">
-                <p>Security Group Configuration Screenshots</p>
-            </div>
+
             
             <h3>SSH Access Methods</h3>
             <ul>
                 <li>Traditional SSH using key pairs</li>
+				<img src="Images/SSH_Putty.png" alt="AWS Screenshot" width="400">
                 <li>PuTTY for Windows-based access</li>
                 <li>EC2 Instance Connect for browser-based management</li>
             </ul>
             
-            <div class="image-placeholder">
-                <p>SSH Access Method Screenshots</p>
-            </div>
+
         </div>
         
         <div class="section">
             <h2>3. IAM Role Implementation</h2>
             <p>Applied least-privilege security principles by:</p>
             <ul>
-                <li>Creating a dedicated IAM role for the EC2 instance</li>
+                <li>Creating a dedicated IAM role for the EC2 instance: DemoRoleEC2 - with IAMReadOnlyAccess policy</li>
+				<img src="Images/assignDemoRoleEC2.png" alt="AWS Screenshot" width="400">
                 <li>Attaching the IAMReadOnlyAccess policy to the role</li>
-                <li>Demonstrating secure use of temporary credentials</li>
+				<img src="Images/listUsersSuccess.png" alt="AWS Screenshot" width="400">
+				<li>After removing the role I was no longer able to successfully list IAM users</li>
+				<img src="Images/detachedDemoRoleEC2.png" alt="AWS Screenshot" width="400">
+				<img src="Images/listUsersDenied.png" alt="AWS Screenshot" width="400">
+				<li>Note that removing the IAMReadOnlyAccess permission from the role will yield similar results</li>
+                
             </ul>
-            
-            <div class="image-placeholder">
-                <p>IAM Role Configuration Screenshots</p>
-            </div>
-            
+
             <h3>IAM Role Policy Example</h3>
             <pre><code>{
     "Version": "2012-10-17",
